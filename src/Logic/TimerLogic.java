@@ -6,13 +6,13 @@ import java.util.TimerTask;
 
 public class TimerLogic extends TimerTask {
     @Override
-    public void run() {
+    public void run() {    //метод запуска потока
         System.out.println("TimerTask начал свое выполнение в:" + new Date());
         completeTask();
         System.out.println("TimerTask закончил свое выполнение в:" + new Date());
     }
 
-    private void completeTask() {
+    private void completeTask() {    //метод выполнения задачи
         try {
             // допустим, выполнение займет 20 секунд
             Thread.sleep(20000);
@@ -31,7 +31,7 @@ public class TimerLogic extends TimerTask {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        timer.cancel(); // вызываем cancel() через какое-то время
+        timer.cancel(); // останавливаем выполнение
         System.out.println("TimerTask прекращена");
         try {
             Thread.sleep(30000);

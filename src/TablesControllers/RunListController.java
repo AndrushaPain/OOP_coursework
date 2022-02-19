@@ -26,13 +26,13 @@ public class RunListController {
     private URL location;
 
     @FXML
-    private TableView<Run> runTbl;
+    private TableView<Run> runTbl;  //таблица для вывода списка рейсов
     @FXML
     private TableColumn<Run, String> col_carNumber;
     @FXML
     private TableColumn<Run, Integer> col_run;
     @FXML
-    private TableColumn<Run, Integer> col_distance;
+    private TableColumn<Run, Integer> col_distance;   //определение столбцов
     @FXML
     private TableColumn<Run, Integer> col_cargo;
     @FXML
@@ -41,15 +41,14 @@ public class RunListController {
     private TableColumn<Run, LocalDate> col_enddate;
 
     Connection connection;
-    private String runNum;
-    ObservableList<Run> runs = FXCollections.observableArrayList();
+    private String runNum;  //номер машины
+    ObservableList<Run> runs = FXCollections.observableArrayList();  //список для вывода в таблицу
     @FXML
     void initialize() {
         loadData();
     }
 
     private void initCols() {
-
         col_run.setCellValueFactory(new PropertyValueFactory<>("run"));
         col_carNumber.setCellValueFactory(new PropertyValueFactory<>("carnum"));
         col_distance.setCellValueFactory(new PropertyValueFactory<>("distance"));

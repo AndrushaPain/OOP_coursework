@@ -23,20 +23,20 @@ public class RepairListController {
     private URL location;
 
     @FXML
-    private TableView<Repair> repairTbl;
+    private TableView<Repair> repairTbl;  //таблица с ремонтами
     @FXML
     private TableColumn<Repair, Integer> col_carNumber;
     @FXML
-    private TableColumn<Repair, String>  col_type;
+    private TableColumn<Repair, String>  col_type;           //определение столбцов
     @FXML
     private TableColumn<Repair, LocalDate> col_startdate;
     @FXML
     private TableColumn<Repair, LocalDate> col_enddate;
 
     Connection connection;
-    private String repNum;
+    private String repNum;  //номер машины
 
-    ObservableList<Repair> repairs = FXCollections.observableArrayList();
+    ObservableList<Repair> repairs = FXCollections.observableArrayList();  //список для вывода в таблицу
     @FXML
     void initialize() {
         loadData();
@@ -50,7 +50,7 @@ public class RepairListController {
     }
 
     public void loadData(){
-        repNum=Controller.getSelected();
+        repNum=Controller.getSelected();  //получаем выбранную машину на главной форме
         try {
             connection = Database.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT Car.C_NUMBER, RepairType.RT_NAME, Repair.R_STARTDATE,Repair.R_ENDDATE " +
@@ -65,13 +65,13 @@ public class RepairListController {
                 String r_type = rs.getString("RT_NAME");
                 LocalDate r_sdate = rs.getObject("R_STARTDATE",LocalDate.class);
                 LocalDate r_edate = rs.getObject("R_ENDDATE",LocalDate.class);
-                repairs.add(new Repair(r_number,r_type,r_sdate,r_edate));
+                repairs.add(new Repair(r_number,r_type,r_sdate,r_edate));  //формируем список из полученных данных
             }
         }catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         initCols();
-        repairTbl.setItems(repairs);
+        repairTbl.setItems(repairs);  //добавляем список в таблицу
     }
 
 }
