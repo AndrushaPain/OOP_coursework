@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="408.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TablesControllers.RunListController">
+   <children>
+      <TableView fx:id="runTbl" prefHeight="410.0" prefWidth="725.0">
+         <columns>
+            <TableColumn fx:id="col_run" prefWidth="120.0" text="Номер рейса" />
+            <TableColumn fx:id="col_carNumber" prefWidth="120.0" text="Номер машины" />
+            <TableColumn fx:id="col_distance" prefWidth="120.0" text="Дистанция" />
+            <TableColumn fx:id="col_cargo" prefWidth="120.0" text="Масса груза" />
+            <TableColumn fx:id="col_startdate" prefWidth="120.0" text="Дата начала" />
+            <TableColumn fx:id="col_enddate" prefWidth="120.0" text="Дата окончания" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

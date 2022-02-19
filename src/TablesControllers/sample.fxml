@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="410.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TablesControllers.Controller">
+   <children>
+      <VBox prefHeight="410.0" prefWidth="725.0">
+         <children>
+            <HBox prefHeight="33.0" prefWidth="618.0">
+               <children>
+                  <Button fx:id="repairList" mnemonicParsing="false" onAction="#onRepairClick" text="Вывод списка ремонтов">
+                     <HBox.margin>
+                        <Insets left="150.0" right="30.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="runList" mnemonicParsing="false" onAction="#onRunClick" text="Вывод списка рейсов">
+                     <HBox.margin>
+                        <Insets right="30.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#onSearchClick" text="Поиск по номеру">
+                     <HBox.margin>
+                        <Insets right="30.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="carTbl" prefHeight="410.0" prefWidth="725.0">
+               <columns>
+                  <TableColumn fx:id="col_carNumber" prefWidth="121.0" text="Номер" />
+                  <TableColumn fx:id="col_carBrand" prefWidth="121.0" text="Марка" />
+                  <TableColumn fx:id="col_carType" prefWidth="121.0" text="Тип" />
+                  <TableColumn fx:id="col_carMileage" prefWidth="121.0" text="Пробег" />
+                  <TableColumn fx:id="col_carCargo" prefWidth="121.0" text="Груз" />
+                  <TableColumn fx:id="col_carStatus" prefWidth="121.0" text="Статус" />
+               </columns>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
